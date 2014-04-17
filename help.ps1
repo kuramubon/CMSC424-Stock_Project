@@ -1,5 +1,5 @@
-﻿$res = 'history.csv'
-'Company_ID, Date, Close' > $res
+﻿$res = 'history.txt'
+'Company_ID, Date, Stock_Price' > $res
 
 foreach ($file in dir *.csv)
 {
@@ -7,5 +7,5 @@ foreach ($file in dir *.csv)
 
   $csv = Import-Csv $file
   $csv | Foreach {"{0},{1},{2}" -f `
-    $matches[1], $_.Date, $_.Close} >> $res
+    $matches[1], $_.Date, $_."Adj Close"} >> $res
 }
