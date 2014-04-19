@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		
+		<title>Search Page</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="description" content="Search for data to view">
+		<meta name="author" content="this guy right here :^)">
+
+		<link rel="stylesheet" href="css/styles.css?v=1.0">
+
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<header>
+			<h1>SEARCH OUR DATABASE</h1><br>
+		</header>
+		
+		<section>
+	
+			<!-- http://www.php.net/manual/en/function.mssql-query.php -->
+			<form method="post" action="search.html">
+				First name: <input type="text" name="firstname"><br>
+				Last name: <input type="text" name="lastname"><br>
+				<input type="radio" name="sex" value="male">Male<br>
+				<input type="radio" name="sex" value="female">Female<br>
+				<input type="checkbox" name="vehicle1" value="Bike">I have a bike<br>
+				<input type="checkbox" name="vehicle2" value="Car">I have a car<br>
+				
+				<!-- http://stackoverflow.com/questions/9996985/populate-a-select-box-in-html-using-ajax -->
+				<select>
+					<option value="Red">Red</option>
+					<option value="Yellow">Yellow</option>
+					<option value="Blue">Blue</option>
+				</select>
+				
+				<input id="submit" name="submit" type="submit" value="Submit">
+			</form>
+			
+			<script src="js/scripts.js">
+			</script>
+		</section>
+		
+		<footer>
+		<a href="transaction.html">Add something to the database!</a><br>
+		<a href="index.html">Back to the index!</a><br>
+		
+	</footer>
+	</body>
+</html>

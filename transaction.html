@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		
+		<title>Transaction Page</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="description" content="Load data into database. Can upload .csv files">
+		<meta name="author" content="this guy right here :^)">
+
+		<link rel="stylesheet" href="css/styles.css?v=1.0">
+
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<header>
+			<h1>ADD SOMETHING TO THE DATABASE</h1><br>
+		</header>
+		
+		<section>
+
+			<form method="post" id="form1" action="transaction.php">
+				First name: <input type="text" name="firstname"><br>
+				Last name: <input type="text" name="lastname"><br>
+				<input type="radio" name="sex" value="male">Male<br>
+				<input type="radio" name="sex" value="female">Female<br>
+				<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+				<input type="checkbox" name="vehicle" value="Car">I have a car<br>
+				
+				<!-- http://stackoverflow.com/questions/9996985/populate-a-select-box-in-html-using-ajax -->
+				<select>
+					<option value="Red">Red</option>
+					<option value="Yellow">Yellow</option>
+					<option value="Blue">Blue</option>
+				</select>
+				
+				<input id="submit" type="submit" value="Submit">
+			</form>
+			<br>
+			<br>
+			<!-- <form id="form2"> -->
+			<!-- 
+				http://www.matlus.com/html5-file-upload-with-progress/ 
+				http://stackoverflow.com/questions/12530158/pass-file-from-javascript-upload-to-php
+				Alternatively, using only php: http://www.w3schools.com/php/php_file_upload.asp
+			-->
+			
+			<!--
+				Select a file to upload:<input type="file" name="fileToUpload" />
+				<input type="button" onclick="uploadFile()" value="Upload" />
+			</form>
+			-->
+			
+			<form enctype="multipart/form-data" action="file_handler.php" method="POST">
+				Send this file: <input name="userfile" type="file" />
+				<input id="submitFile" name="submitFile" type="submit" value="Send File" />
+			</form>
+			
+			<script src="js/scripts.js">
+			/*
+			function uploadFile() {
+				var http = new XMLHttpRequest();
+				var url = "file_handler.php";
+				var file_data = new FormData();
+				file_data.append("fileToUpload", document.getElementById('fileToUpload').files[0]);
+				http.open("POST", url, true);
+
+				http.onreadystatechange = function() {
+					if(http.readyState == 4 && http.status == 200) {
+						alert(http.responseText);
+					}
+				}
+				
+				http.send(file_data);
+			}
+			*/
+			</script>
+		</section>
+		
+		<footer>
+		<a href="search.html">Search and view our database!</a><br>
+		<a href="index.html">Back to the index!</a><br>
+		
+	</footer>
+	</body>
+</html>
